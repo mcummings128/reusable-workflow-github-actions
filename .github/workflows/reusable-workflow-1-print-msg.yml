@@ -17,6 +17,7 @@ on:
         type: string
         default: "...nothing (you didn't specify a value)"
 
+# Use single quotes to get color to work
 env:
   YELLOW: '\033[0;33m'
   DONE: '\033[0m'
