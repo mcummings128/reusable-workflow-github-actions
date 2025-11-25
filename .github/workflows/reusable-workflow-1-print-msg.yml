@@ -31,4 +31,4 @@ jobs:
         run: | 
           echo "Printing a message with your 'phrase' input, which you defined as '${{ inputs.phrase }}'."
           echo "You called this workflow via the '${{ github.event_name }}' event."
-          echo -e "${YELLOW} This text will be yellow. ${DONE}"
+          echo -e "${env.YELLOW} This text will be yellow. ${env.DONE}"
