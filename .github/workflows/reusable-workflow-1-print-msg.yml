@@ -18,8 +18,8 @@ on:
         default: "...nothing (you didn't specify a value)"
 
 env:
-  YELLOW: "\033[0;33m"
-  DONE: "\033[0m"
+  YELLOW: '\033[0;33m'
+  DONE: '\033[0m'
         
 jobs:
   print-message:
