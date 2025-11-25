@@ -18,7 +18,8 @@ on:
         default: "...nothing (you didn't specify a value)"
 
 env:
-  YELLOW: ""
+  YELLOW: "\033[0;33m"
+  DONE: "\033[0m"
         
 jobs:
   print-message:
@@ -30,4 +31,4 @@ jobs:
         run: | 
           echo "Printing a message with your 'phrase' input, which you defined as '${{ inputs.phrase }}'."
           echo "You called this workflow via the '${{ github.event_name }}' event."
-          echo -e "\033[0;33mThis text will be yellow.\033[0m"
+          echo -e "$YELLOWThis text will be yellow.$DONE"
