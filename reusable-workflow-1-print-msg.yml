@@ -14,7 +14,7 @@ on:
     inputs:
       phrase:
         type: string
-        default: "...but you didn't specify a value"
+        default: "...nothing (you didn't specify a value)"
   
   jobs:
     print-message:
@@ -23,4 +23,4 @@ on:
       
       steps:
         name: Print the message
-        run: echo ""
+        run: echo "Printing a message with your 'phrase' input, which you defined as ${{ inputs.phrase }}"
