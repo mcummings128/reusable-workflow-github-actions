@@ -1,0 +1,26 @@
+name: Resuable Workflow 1 (Print messagw)
+description: A reusable workflow that just prints a message for proof-of-concept.
+
+on:
+  
+  workflow_dispatch:
+    inputs:
+      phrase:
+        type: string
+        default: "...but you didn't specify a value"
+  
+  # Must have workflow_call in order for workflow to be reusable
+  workflow_call:
+    inputs:
+      phrase:
+        type: string
+        default: "...but you didn't specify a value"
+  
+  jobs:
+    print-message:
+      name: Print message
+      runs-on: ubuntu-latest
+      
+      steps:
+        name: Print the message
+        run: echo ""
