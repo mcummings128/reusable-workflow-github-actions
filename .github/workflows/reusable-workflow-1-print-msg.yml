@@ -1,4 +1,5 @@
 name: Resuable Workflow 1 (Print message)
+
 description: A reusable workflow that just prints a message for proof-of-concept.
 
 on:
@@ -12,17 +13,17 @@ on:
         default: "...but you didn't specify a value"
   
   # Must have workflow_call in order for workflow to be reusable
-  workflow_call:
-    inputs:
-      phrase:
-        type: string
-        default: "...nothing (you didn't specify a value)"
+  # workflow_call:
+  #   inputs:
+  #     phrase:
+  #       type: string
+  #       default: "...nothing (you didn't specify a value)"
   
-  jobs:
-    print-message:
-      name: Print message
-      runs-on: ubuntu-latest
-      
-      steps:
-        - name: Print the message
-          run: echo "Printing a message with your 'phrase' input, which you defined as ${{ inputs.phrase }}"
+jobs:
+  print-message:
+    name: Print message
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Print the message
+        run: echo "Printing a message with your 'phrase' input, which you defined as ${{ inputs.phrase }}"
