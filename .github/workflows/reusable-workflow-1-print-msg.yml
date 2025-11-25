@@ -1,4 +1,4 @@
-name: Resuable Workflow 1 (Print messagw)
+name: Resuable Workflow 1 (Print message)
 description: A reusable workflow that just prints a message for proof-of-concept.
 
 on:
@@ -6,6 +6,8 @@ on:
   workflow_dispatch:
     inputs:
       phrase:
+        description: "String to use in printed message"
+        required: false
         type: string
         default: "...but you didn't specify a value"
   
@@ -22,5 +24,5 @@ on:
       runs-on: ubuntu-latest
       
       steps:
-        name: Print the message
-        run: echo "Printing a message with your 'phrase' input, which you defined as ${{ inputs.phrase }}"
+        - name: Print the message
+          run: echo "Printing a message with your 'phrase' input, which you defined as ${{ inputs.phrase }}"
