@@ -26,4 +26,4 @@ jobs:
       - name: Print the message
         run: | 
           echo "Printing a message with your 'phrase' input, which you defined as '${{ inputs.phrase }}'."
-          echo "You called this workflow via the ${{ github.event }} event."
+          echo "You called this workflow via the '${{ github.event_name }}' event."
