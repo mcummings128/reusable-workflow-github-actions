@@ -26,6 +26,7 @@ env:
   YELLOW: '\033[0;33m'
   DONE: '\033[0m'
   GH_TOKEN: ${{ inputs.token }}
+  TEAM_NAME: ${{ inputs.team_name }}
         
 jobs:
   print-message:
@@ -34,6 +35,9 @@ jobs:
     
     steps:
 
+      - name: Echo relevant vars
+        run: echo "team_name = $TEAM_NAME"
+        
       - name: Print the message
         run: | 
             if [[ "${{ inputs.team_name }}" == "no team specified" ]]
