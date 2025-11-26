@@ -16,6 +16,7 @@ on:
             team_name:
                 type: string
                 default: "no team specified"
+            # Use a token that has org: read permissions
             token:
                 type: string
     
