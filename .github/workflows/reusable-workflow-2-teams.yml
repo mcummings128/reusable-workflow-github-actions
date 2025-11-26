@@ -1,0 +1,46 @@
+name: Resuable Workflow 2 (Get team members)
+
+on:
+  
+#   workflow_dispatch:
+#     inputs:
+#       team_name:
+#         description: "team name"
+#         required: false
+#         type: string
+#         default: "no team specified"
+  
+  # Must have workflow_call in order for workflow to be reusable
+    workflow_call:
+        inputs:
+            team_name:
+                type: string
+                default: "no team specified"
+            token:
+                type: string
+    
+
+# Use single quotes to get color to work
+env:
+  YELLOW: '\033[0;33m'
+  DONE: '\033[0m'
+        
+jobs:
+  print-message:
+    name: Print message
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Print the message
+        run: | 
+            if [[ "${{ inputs.team_name }}" == "no team specified" ]]
+            then
+                echo "No team name provided, so doing nothing."
+            else
+                echo "Printing the members of '${{ inputs.team_name }}'."
+                mapfile -t team_members < <(gh api -H "Accept: application/vnd.github+json" -H "X-GitHub-Api-Version: 2022-11-28" -H "Authorization: Bearer ${{ inputs.token }}"  /orgs/org-mushroom-kingdom/teams/${{ inputs.team_name }}/members | jq -r '.[].login')
+                for member in "${team_members[@]}"
+                do
+                    echo "member = $member"
+                done
+            fi
