@@ -2,23 +2,23 @@ name: Resuable Workflow 2 (Get team members)
 
 on:
   
-#   workflow_dispatch:
-#     inputs:
-#       team_name:
-#         description: "team name"
-#         required: false
-#         type: string
-#         default: "no team specified"
+  workflow_dispatch:
+    inputs:
+      team_name:
+        description: "team name"
+        required: false
+        type: string
+        default: "team-peach"
   
-  # Must have workflow_call in order for workflow to be reusable
-    workflow_call:
-        inputs:
-            team_name:
-                type: string
-                default: "no team specified"
-            # Use a token that has org: read permissions
-            token:
-                type: string
+    # Must have workflow_call in order for workflow to be reusable
+    # workflow_call:
+    #     inputs:
+    #         team_name:
+    #             type: string
+    #             default: "no team specified"
+    #         # Use a token that has org: read permissions
+    #         token:
+    #             type: string
     
 
 # Use single quotes to get color to work
