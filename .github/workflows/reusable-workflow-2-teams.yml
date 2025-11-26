@@ -25,6 +25,7 @@ on:
 env:
   YELLOW: '\033[0;33m'
   DONE: '\033[0m'
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN}}
         
 jobs:
   print-message:
