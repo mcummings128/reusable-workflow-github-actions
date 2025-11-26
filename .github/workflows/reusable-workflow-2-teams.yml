@@ -12,20 +12,22 @@ on:
   
   # Must have workflow_call in order for workflow to be reusable
     workflow_call:
+        secrets: 
+            # Use a token that has org: read permissions
+            teams_read_token: 
+                required: true
         inputs:
             team_name:
                 type: string
                 default: "no team specified"
-            # Use a token that has org: read permissions
-            token:
-                type: string
+
     
 
 # Use single quotes to get color to work
 env:
   YELLOW: '\033[0;33m'
   DONE: '\033[0m'
-  GH_TOKEN: ${{ inputs.token }}
+  GH_TOKEN: ${{ secrets.teams_read_token }}
   TEAM_NAME: ${{ inputs.team_name }}
         
 jobs:
