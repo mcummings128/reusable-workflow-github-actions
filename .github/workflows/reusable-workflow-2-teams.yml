@@ -1,3 +1,4 @@
+# Example of a reusable workflow with a passed argument, and a passed secret (token)
 name: Resuable Workflow 2 (Get team members)
 
 on:
@@ -12,6 +13,10 @@ on:
   
   # Must have workflow_call in order for workflow to be reusable
     workflow_call:
+        # secrets get inherited from the caller workflow.
+        # For example, the bash-git-script repo has a caller workflow that calls this reusable workflow (caller workflow is ex-caller-workflow-2.yml) 
+        # That repo has a token with relevant permissions--there's no such token on this repo (reusable-workflow-github-actions) at the moment.
+        # The only way that this workflow can work is with a token due to the particular API call involved. And calling this works--so we know that the token has to be from somewhere  
         secrets: 
             # Use a token that has org: read permissions
             teams_read_token: 
