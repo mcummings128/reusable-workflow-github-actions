@@ -52,6 +52,8 @@ jobs:
                 echo "No team name provided, so doing nothing."
             else
                 echo "Printing the members of '${{ inputs.team_name }}'."
+                
+                # Example of how to use cURL (vs Github CLI call after this commented block)
                 # curl -L \
                 #     -H "Accept: application/vnd.github+json" \
                 #     -H "Authorization: Bearer ${{ inputs.token }}" \
