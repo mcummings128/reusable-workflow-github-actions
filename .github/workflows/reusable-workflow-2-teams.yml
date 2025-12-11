@@ -33,7 +33,6 @@ env:
   YELLOW: '\033[0;33m'
   DONE: '\033[0m'
   GH_TOKEN: ${{ secrets.teams_read_token }}
-  TEAM_NAME: ${{ inputs.team_name }}
         
 jobs:
   print-message:
@@ -43,7 +42,7 @@ jobs:
     steps:
 
       - name: Echo relevant vars
-        run: echo "team_name = $TEAM_NAME"
+        run: echo "team_name = ${{ inputs.team_name }}"
         
       - name: Print the message
         run: | 
