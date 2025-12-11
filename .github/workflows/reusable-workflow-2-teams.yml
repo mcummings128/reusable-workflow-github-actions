@@ -38,10 +38,7 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-
-      - name: Echo relevant vars
-        run: echo "team_name = ${{ inputs.team_name }}"
-        
+  
       - name: Print the message
         run: | 
             if [[ "${{ inputs.team_name }}" == "no team specified" ]]
