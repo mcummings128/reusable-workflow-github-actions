@@ -33,13 +33,13 @@ env:
   GH_TOKEN: ${{ secrets.teams_read_token }}
         
 jobs:
-  print-message:
-    name: Print message
+  print-team-members:
+    name: Print team member
     runs-on: ubuntu-latest
     
     steps:
   
-      - name: Print the message
+      - name: Print the team members
         run: | 
             if [[ "${{ inputs.team_name }}" == "no team specified" ]]
             then
