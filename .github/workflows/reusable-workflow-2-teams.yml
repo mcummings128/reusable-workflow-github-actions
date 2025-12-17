@@ -34,7 +34,7 @@ env:
         
 jobs:
   print-team-members:
-    name: Print team members
+    name: Print team members 
     runs-on: ubuntu-latest
     
     steps:
