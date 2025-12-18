@@ -26,9 +26,6 @@ on:
                 type: string
                 default: "no team specified"
 
-    
-
-# Use single quotes to get color to work
 env:
   GH_TOKEN: ${{ secrets.teams_read_token }}
         
