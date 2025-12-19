@@ -1,0 +1,22 @@
+name: Resuable Workflow 3 (Call on script in reusable workflow repo)
+
+on:
+  
+  workflow_dispatch:
+
+  workflow_call:
+
+jobs:
+  something:
+    name: "Something"
+    runs-on: ubuntu-latest
+    steps:
+      
+      # This will checkout the caller repo if event is workflow_call?
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: repo sanity check
+        run: echo "TBD"
+
+
